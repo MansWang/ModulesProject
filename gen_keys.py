@@ -23,6 +23,7 @@ def sign_message(challenge, filename="secret_key.txt"):
     # Use the code from the signatures assignment to sign the given challenge
     
     private_key = key[0].strip()
+    acct = w3.eth.account.from_key(private_key)
     eth_addr = acct.address
     signed_message = w3.eth.account.sign_message(message, private_key=private_key)
 
